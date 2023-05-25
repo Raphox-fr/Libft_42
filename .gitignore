@@ -1,0 +1,3 @@
+#ignore les fichiers .logs
+*.log
+*.jpg
