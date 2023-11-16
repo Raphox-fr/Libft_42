@@ -6,13 +6,14 @@
 /*   By: raphox <raphox@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 14:50:09 by marvin            #+#    #+#             */
-/*   Updated: 2023/11/10 16:23:50 by raphox           ###   ########.fr       */
+/*   Updated: 2023/11/16 12:26:12 by raphox           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdlib.h>
+#include "libft.h"
+#include <stdlib.h>
 
-int	ft_strlen(char *str)
+int	ft_strlen(const char *str)
 {
 	int	i;
 
@@ -24,7 +25,7 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-char	*ft_strdup(char *src)
+char	*ft_strdup(const char *src)
 {
 	int		i;
 	int		countstr;
@@ -44,10 +45,8 @@ char	*ft_strdup(char *src)
 	return (dest);
 }
 
-// /*
 // #include<stdio.h>
 // int main(int argc, char **argv)
 // {
-// 	char *str = "";
-// 	printf("%s", ft_strdup(str));
+// 	printf("%s", ft_strdup(argv[1]));
 // }

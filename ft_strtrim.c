@@ -3,18 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rafaria <rafaria@student.42.fr>            +#+  +:+       +#+        */
+/*   By: raphox <raphox@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 14:32:12 by rafaria           #+#    #+#             */
-/*   Updated: 2023/11/15 14:49:39 by rafaria          ###   ########.fr       */
+/*   Updated: 2023/11/16 14:55:39 by raphox           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-int	ft_strlen(const char *str)
+int	ft_strlen(char const *str)
 {
 	int	i;
 
@@ -69,10 +70,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (main_str);
 }
 
-int	main(void)
-{
-	char const	set[] = " b";
-	char const	s1[] = "     b bonjour  b ";
+// int	main(void)
+// {
+// 	char const set[] = " b";
+// 	char const s1[] = "     b bonjour  b ";
 
-	printf("%s", ft_strtrim(s1, set));
-}
+// 	printf("%s", ft_strtrim(s1, set));
+// }

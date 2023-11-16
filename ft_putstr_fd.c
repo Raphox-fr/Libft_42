@@ -3,18 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rafaria <rafaria@student.42.fr>            +#+  +:+       +#+        */
+/*   By: raphox <raphox@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 10:35:40 by rafaria           #+#    #+#             */
-/*   Updated: 2023/11/13 16:18:30 by rafaria          ###   ########.fr       */
+/*   Updated: 2023/11/16 12:23:01 by raphox           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
+#include "libft.h"
+#include <unistd.h>
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
-	int i;
+	int	i;
+
 	i = 0;
 	if (s)
 	{
@@ -25,12 +27,11 @@ void ft_putstr_fd(char *s, int fd)
 		}
 	}
 	return ;
-	
 }
 
-				// int main()
-				// {
-				// 	char s[] = "bonjou comment ca va";
-				// 	ft_putstr_fd(s, 1);
-					
-				// }
+// int main()
+// {
+// 	char s[] = "bonjou comment ca va";
+// 	ft_putstr_fd(s, 1);
+
+// }

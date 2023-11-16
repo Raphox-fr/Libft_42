@@ -3,38 +3,44 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rafaria <rafaria@student.42.fr>            +#+  +:+       +#+        */
+/*   By: raphox <raphox@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 16:03:37 by rafaria           #+#    #+#             */
-/*   Updated: 2023/11/13 15:03:39 by rafaria          ###   ########.fr       */
+/*   Updated: 2023/11/16 17:25:06 by raphox           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strchr(const char *s, int c)
+#include "libft.h"
+
+char	*ft_strchr(const char *s, int c)
 {
-	int i;
+	int			i;
+	const char	*sexy;
+
 	i = 0;
-	const char *sexy;
 	sexy = s;
 	while (sexy[i])
 	{
-		if (sexy[i] == c)
+		if (sexy[i] == (unsigned char)c)
 		{
 			return (((char *)sexy) + i);
 		}
 		i++;
 	}
+	if (s[i] == (unsigned char)c)
+		return ((char *)s + i);
+	return (NULL);
 }
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-int main()
-{
-	const char * s = "Comment ca va";
-	int c = 'a';
-	printf("%s", ft_strchr(s, c));
-}
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
 
-check les lettres de facon inpendante.
-commencer au debut, puis partir de la fin pour aller vers le debut 
+// int	main(void)
+// {
+// 	const char	*s = "tripouille";
+// 	int			c;
+
+// 	c = 'a';
+// 	printf("%s", ft_strchr(s, 9));
+// }

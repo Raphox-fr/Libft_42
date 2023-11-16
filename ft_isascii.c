@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rafaria <rafaria@student.42.fr>            +#+  +:+       +#+        */
+/*   By: raphox <raphox@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 18:59:27 by rafaria           #+#    #+#             */
-/*   Updated: 2023/11/06 18:59:32 by rafaria          ###   ########.fr       */
+/*   Updated: 2023/11/16 16:41:02 by raphox           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int i)
+#include "libft.h"
+
+int	ft_isascii(int c)
 {
-	if (i > 0 && i < 127)
-	{
+	if (c >= 0 && c <= 127)
 		return (1);
-	}
 	return (0);
 }

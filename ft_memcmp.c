@@ -3,37 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rafaria <rafaria@student.42.fr>            +#+  +:+       +#+        */
+/*   By: raphox <raphox@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 18:02:52 by rafaria           #+#    #+#             */
-/*   Updated: 2023/11/09 18:23:10 by rafaria          ###   ########.fr       */
+/*   Updated: 2023/11/16 16:35:07 by raphox           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+#include "libft.h"
 #include <stddef.h>
-int ft_memcmp(const void *s1, const void *s2, size_t n)
+
+int	ft_memcmp(const void *dest, const void *src, size_t n)
 {
-    int i;
-    i = 0;
-    
-    unsigned char *sup1;
-    unsigned char *sup2;
+	size_t				i;
+	char	*sup1;
+	char	*sup2;
+	int				diff;
 
-    sup1 = (unsigned char *)s1;
-    sup2 = (unsigned char *)s2;
-    int diff;
-    diff = 0;
-
-    while(sup1[i] != '\0' && sup2[i] != '\0' && i < n)
-    {
-        diff = sup1[i] - sup2[i];
-        if (diff != 0)
-            return (diff);
-        i++;
-    }
-    return (0);
-    
+	i = 0;
+	sup1 = (char *)dest;
+	sup2 = (char *)src;
+	diff = 0;
+	while (i < n)
+	{
+		diff = sup2[i] - sup1[i];
+		if (diff != 0)
+			return (diff);
+		i++;
+	}
+	return (0);
 }
 
 // #include <stddef.h>

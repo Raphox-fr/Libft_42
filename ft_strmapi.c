@@ -3,19 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rafaria <rafaria@student.42.fr>            +#+  +:+       +#+        */
+/*   By: raphox <raphox@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 15:49:29 by rafaria           #+#    #+#             */
-/*   Updated: 2023/11/15 17:52:44 by rafaria          ###   ########.fr       */
+/*   Updated: 2023/11/16 15:30:06 by raphox           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdio.h>
-#include<stdlib.h>
+#include <stdlib.h>
 
-int ft_strlen(const char *str)
+int	ft_strlen(const char *str)
 {
-	int i;
+	int	i;
+
 	i = 0;
 	while (str[i])
 	{
@@ -24,10 +26,10 @@ int ft_strlen(const char *str)
 	return (i);
 }
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int i;
-	char *blyat;
+	int		i;
+	char	*blyat;
 
 	i = 0;
 	blyat = malloc(sizeof(char) * ft_strlen(s) + 1);
@@ -41,16 +43,13 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	return (blyat);
 }
 
-
-char suka(unsigned int bee, char bon)
+char	suka(unsigned int bee, char bon)
 {
-	return (bon + 1);
+	return (bon + bee);
 }
 
-
-
-int main()
-{
-	const char s[] = "abcdef";
-	printf("%s",ft_strmapi(s, suka));
-}
+// int	main(void)
+// {
+// 	const char s[] = "abcdef";
+// 	printf("%s", ft_strmapi(s, suka));
+// }

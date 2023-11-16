@@ -3,69 +3,58 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rafaria <rafaria@student.42.fr>            +#+  +:+       +#+        */
+/*   By: raphox <raphox@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 15:31:44 by rafaria           #+#    #+#             */
-/*   Updated: 2023/11/09 14:10:24 by rafaria          ###   ########.fr       */
+/*   Updated: 2023/11/16 15:13:20 by raphox           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stddef.h>
-void * ft_memcpy(void * destination, const void * source, size_t size )
+
+void	*ft_memcpy(void *destination, const void *source, size_t size)
 {
-    int    i;
-    int be;
+	size_t		i;
+	char		*dest;
+	const char	*src;
 
-    char *dest;
-    dest = destination;
-    const char *src;
-    src = source;
-
-    i = 0;
-    while (i < size)
-    {
-        dest[i] = src[i];
-        i++;
-    }
-    return (destination);
-}
-
-void * ft_memmove( void * destination, const void * source, size_t size )
-{
-    char *dest;
-    dest = destination;
-
-    const char *src;
-    src = source;
-
-    int i;
-    i = 0;
-
-    int bee;
-    bee = 0;
-
-    if (dest == 0 || src == 0)
-        return (dest);
-
-    if (src == dest)
-      return (dest);
-    if (src > dest)
-    {
-        dest = ft_memcpy(dest, src, size);
-    }
-    else
-    {
-        while (size > 0)
-            {
-                size--;
-                dest[size] = src[size];
-            }
-        return (dest);
+	dest = destination;
+	src = source;
+	i = 0;
+	while (i < size)
+	{
+		dest[i] = src[i];
+		i++;
 	}
+	return (destination);
 }
 
+void	*ft_memmove(void *dest, const void *src, size_t n)
+{
+	char		*yuka;
+	const char	*what;
 
-
+	yuka = dest;
+	what = src;
+	if (yuka == 0 || what == 0)
+		return (yuka);
+	if (what == yuka)
+		return (yuka);
+	if (what > yuka)
+	{
+		yuka = ft_memcpy(yuka, what, n);
+	}
+	else
+	{
+		while (n > 0)
+		{
+			n--;
+			yuka[n] = what[n];
+		}
+	}
+	return (dest);
+}
 
 // #include <memory.h>
 // #include <string.h>
@@ -79,5 +68,5 @@ void * ft_memmove( void * destination, const void * source, size_t size )
 //    printf( "The string: %s\n", str1 );
 //    ft_memmove( str1 + 2, str1 + 1, 4 );
 //    printf( "New string: %s\n", str1 );
-   
+
 // }

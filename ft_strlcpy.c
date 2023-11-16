@@ -3,44 +3,49 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rafaria <rafaria@student.42.fr>            +#+  +:+       +#+        */
+/*   By: raphox <raphox@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 10:38:19 by rafaria           #+#    #+#             */
-/*   Updated: 2023/11/13 10:23:17 by rafaria          ###   ########.fr       */
+/*   Updated: 2023/11/16 18:27:46 by raphox           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stddef.h>
-size_t	ft_strlcpy(char *dest, char *src, size_t size)
+#include "libft.h"
+#include <stddef.h>
+
+size_t	ft_strlcpy(char *dest, const char *src, size_t n)
 {
 	size_t	i;
+
 	i = 0;
-	
-	while (dest[i] != '\0' && i < size)
+	if (n > 0)
 	{
-		dest[i] = src[i];
-		i++;
+		while (src[i] != '\0' && i < (n -1))
+		{
+			dest[i] = src[i];
+			i++;
+		}
+		dest[i] = '\0';
 	}
-	dest[i] = '\0';
-	i = 0;
-	while (dest[i])
+	while (src[i] != '\0')
 		i++;
 	return (i);
 }
 
-#include<stddef.h>
-#include<stdlib.h>
-#include <stdio.h>
+// #include <stddef.h>
+// #include <stdio.h>
+// #include <stdlib.h>
 
-int main()
-{
-    size_t i = 15;
-    char destination[] = "Salu";
-    char s[] = "bonjourRRRRRRR";
-    printf("%ld", ft_strlcpy(destination, s, i));
-	printf("\n");
-}
+// int	main(void)
+// {
+// 	size_t	i;
+// 	char	destination[] = "Salu";
+// 	char	s[] = "bonjourRRRRRRR";
 
+// 	i = 15;
+// 	printf("%ld", ft_strlcpy(destination, s, i));
+// 	printf("\n");
+// }
 
 // #include<stddef.h>
 // #include<stddef.h>
@@ -48,7 +53,7 @@ int main()
 // {
 //     int    i;
 //     i = 0;
-    
+
 //     while (src[i] != '\0' || i < (dstsize - 1))
 //     {
 //         dest[i] = src[i];

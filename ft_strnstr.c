@@ -3,31 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rafaria <rafaria@student.42.fr>            +#+  +:+       +#+        */
+/*   By: raphox <raphox@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 16:56:56 by rafaria           #+#    #+#             */
-/*   Updated: 2023/11/09 17:05:26 by rafaria          ###   ########.fr       */
+/*   Updated: 2023/11/16 15:20:53 by raphox           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stddef.h>
-char	*ft_strnstr(const char *str, const char *to_find, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	int	i;
-	int	j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	j = 0;
-	if (to_find[j] == '\0')
-		return ((char *)str);
-	while (str[i])
+	if (little[j] == '\0')
+		return ((char *)big);
+	while (big[i])
 	{
-		if (str[i] == to_find[j])
+		if (big[i] == little[j])
 		{
-			while (str[i + j] == to_find[j] && j < len)
+			while (big[i + j] == little[j] && j < len)
 				j++;
-			if ( j == len)
-				return ((char *)str + i);
+			if (j == len)
+				return ((char *)big + i);
 		}
 		j = 0;
 		i++;
@@ -35,15 +36,15 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 	return (0);
 }
 
-#include	<string.h>
-#include <string.h>
-#include <stdio.h>
-#include <unistd.h>
-int main(void)
-{
-	char s1[] = "bonjour comment ca va";
-	char s2[] = "comment";
-	char *res = ft_strnstr(s1, s2, 4);
-	printf("%s", res);
-	printf("\n");
-}
+// #include <unistd.h>
+
+// int	main(void)
+// {
+// 	char	s1[] = "bonjour comment ca va";
+// 	char	s2[] = "comment";
+// 	char	*res;
+
+// 	res = ft_strnstr(s1, s2, 4);
+// 	printf("%s", res);
+// 	printf("\n");
+// }

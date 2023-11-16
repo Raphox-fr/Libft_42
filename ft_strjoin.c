@@ -3,19 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rafaria <rafaria@student.42.fr>            +#+  +:+       +#+        */
+/*   By: raphox <raphox@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 18:36:43 by raphox            #+#    #+#             */
-/*   Updated: 2023/11/13 18:43:05 by rafaria          ###   ########.fr       */
+/*   Updated: 2023/11/16 15:24:45 by raphox           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include <stdlib.h>
+#include "libft.h"
 #include <stdio.h>
-int ft_strlen(char *str)
+#include <stdlib.h>
+
+int	ft_strlen_perso(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
@@ -25,19 +26,17 @@ int ft_strlen(char *str)
 	return (i);
 }
 
-char	*ft_strlcpy(char *blyat, char *dst, const char *src, size_t dstsize)
+char	*ft_blyat_strlcpy(char *blyat, char *dst, const char *src, size_t dstsize)
 {
-	size_t i;
-	int l;
-	l = 0;
+	size_t	i;
+	int		l;
 
+	l = 0;
 	if (blyat == NULL)
-		return (NULL); 
+		return (NULL);
 	if (!dst || !src)
 		return (0);
 	i = ft_strlen(blyat);
-
-	
 	if (dstsize != 0)
 	{
 		while (src[l] != '\0')
@@ -51,29 +50,30 @@ char	*ft_strlcpy(char *blyat, char *dst, const char *src, size_t dstsize)
 	return (blyat);
 }
 
-
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char *dest = (char *)s1;
-	char *src = (char *)s2;
-	
-	int count1 = ft_strlen(dest);
-	int count2 = ft_strlen(src);
-	
-	char *suka;
+	char	*dest;
+	char	*src;
+	int		count1;
+	int		count2;
+	char	*suka;
 
-	suka = malloc ((sizeof(char)) * (count1 + count2) + 1);
+	dest = (char *)s1;
+	src = (char *)s2;
+	count1 = ft_strlen_perso(dest);
+	count2 = ft_strlen_perso(src);
+	suka = malloc((sizeof(char)) * (count1 + count2) + 1);
 	if (suka == NULL)
 		return (NULL);
 	suka[0] = '\0';
-
-	suka = ft_strlcpy(suka, &dest[0],dest, count1);
-	suka = ft_strlcpy(suka, &dest[count1],src, count2);
+	suka = ft_blyat_strlcpy(suka, &dest[0], dest, count1);
+	suka = ft_blyat_strlcpy(suka, &dest[count1], src, count2);
+	return(suka);
 }
 
-int main()
-{
-	const char s1[] = "a";
-	const char s2[] = "fbhjwgfkjewrngkjl";
-	printf("%s",ft_strjoin(s1, s2));
-}
+// int	main(void)
+// {
+// 	const char s1[] = "a";
+// 	const char s2[] = "fbhjwgfkjewrngkjl";
+// 	printf("%s", ft_strjoin(s1, s2));
+// }

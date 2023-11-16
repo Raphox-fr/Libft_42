@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rafaria <rafaria@student.42.fr>            +#+  +:+       +#+        */
+/*   By: raphox <raphox@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 15:55:03 by rafaria           #+#    #+#             */
-/*   Updated: 2023/11/08 16:03:10 by rafaria          ###   ########.fr       */
+/*   Updated: 2023/11/16 16:52:38 by raphox           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_tolower (int character )
-{
-	if (character >= 97 && character <= 122)
-		character = character - 32;
-	else
-		return (character);
-}
+#include "libft.h"
 
+int	ft_tolower(int c)
+{
+	if (c >= 65 && c <= 90)
+		c = c + 32;
+	return (c);
+}

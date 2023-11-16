@@ -3,18 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rafaria <rafaria@student.42.fr>            +#+  +:+       +#+        */
+/*   By: raphox <raphox@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 15:43:15 by rafaria           #+#    #+#             */
-/*   Updated: 2023/11/08 16:02:22 by rafaria          ###   ########.fr       */
+/*   Created: 2023/11/16 13:10:22 by raphox            #+#    #+#             */
+/*   Updated: 2023/11/16 16:51:09 by raphox           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-int ft_toupper( int character )
+int	ft_toupper(int c)
 {
-	if (character >= 65 && character <= 90)
-		character = character + 32;
-	else
-		return (character);
+	if (c >= 97 && c <= 122)
+	{
+		c = c - 32;
+		return (c);
+	}
+	return (c);
 }

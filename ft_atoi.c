@@ -3,36 +3,47 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rafaria <rafaria@student.42.fr>            +#+  +:+       +#+        */
+/*   By: raphox <raphox@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 18:42:31 by rafaria           #+#    #+#             */
-/*   Updated: 2023/11/09 18:44:15 by rafaria          ###   ########.fr       */
+/*   Updated: 2023/11/16 12:03:31 by raphox           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	atoi(char *str)
+#include "libft.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+int	ft_atoi(const char *str)
 {
-	int neg;
-	int num;
-	int i;
+	int	i;
+	int	sign;
+	int	n;
 
 	i = 0;
-	neg = 1;
-	num = 0;
-	while (str[i] <= ' ')
+	sign = 1;
+	n = 0;
+	while (((str[i] >= 9 && str[i] <= 13) || str[i] == 32) && str[i])
 		i++;
-	if (str[i] == '-' || str[i] == '+')
+	if (str[i] == '-')
 	{
-		if (str[i] == '-')
-		{
-			neg *= -1;
-		}
+		sign = -1;
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
+	else if (str[i] == '+')
+		i++;
+	while ((str[i] >= '0' && str[i] <= '9') && str[i])
 	{
-		num = num * 10 + (str[i] - 48);
+		n = n * 10 + (str[i] - '0');
 		i++;
 	}
-	return (num * neg);
+	return (n * sign);
 }
+
+// int		main(void)
+// {
+// 	printf("%d\n", ft_atoi("123456789"));
+// 	printf("%d\n", atoi("123456789"));
+// 	return (0);
+// }

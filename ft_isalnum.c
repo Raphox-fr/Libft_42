@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rafaria <rafaria@student.42.fr>            +#+  +:+       +#+        */
+/*   By: raphox <raphox@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 18:59:09 by rafaria           #+#    #+#             */
-/*   Updated: 2023/11/06 18:59:47 by rafaria          ###   ########.fr       */
+/*   Updated: 2023/11/16 15:50:48 by raphox           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(int i)
+#include "libft.h"
+
+int	ft_isalnum(int c)
 {
-	if ((i < 'a' || i > 'z')
-		&& (i < 'A' || i > 'Z') 
-		&& (i < '0' || i > '9'))
+	if ((c < 'a' || c > 'z') && (c < 'A' || c > 'Z') && (c < '0' || c > '9'))
 	{
 		return (0);
 	}

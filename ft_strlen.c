@@ -3,16 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rafaria <rafaria@student.42.fr>            +#+  +:+       +#+        */
+/*   By: raphox <raphox@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 19:00:05 by rafaria           #+#    #+#             */
-/*   Updated: 2023/11/13 16:38:10 by rafaria          ###   ########.fr       */
+/*   Updated: 2023/11/16 12:33:10 by raphox           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strlen(char *str)
+#include "libft.h"
+
+int	ft_strlen(const char *str)
 {
-	int i;
+	int	i;
+
 	i = 0;
 	while (str[i])
 	{
@@ -20,4 +23,3 @@ int ft_strlen(char *str)
 	}
 	return (i);
 }
-
