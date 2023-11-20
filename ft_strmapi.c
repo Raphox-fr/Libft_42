@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raphox <raphox@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rafaria <rafaria@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 15:49:29 by rafaria           #+#    #+#             */
-/*   Updated: 2023/11/16 15:30:06 by raphox           ###   ########.fr       */
+/*   Updated: 2023/11/20 17:04:10 by rafaria          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,11 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	int		i;
 	char	*blyat;
-
+	int taille;
+	
+	taille = ft_strlen(s) + 1;
 	i = 0;
-	blyat = malloc(sizeof(char) * ft_strlen(s) + 1);
+	blyat = malloc(sizeof(char) * (taille));
 	if (blyat == NULL)
 		return (NULL);
 	while (s[i])
@@ -40,13 +42,11 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		blyat[i] = (*f)(i, s[i]);
 		i++;
 	}
+	blyat[i] = '\0';
 	return (blyat);
 }
 
-char	suka(unsigned int bee, char bon)
-{
-	return (bon + bee);
-}
+
 
 // int	main(void)
 // {

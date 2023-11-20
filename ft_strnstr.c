@@ -3,48 +3,57 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raphox <raphox@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rafaria <rafaria@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 16:56:56 by rafaria           #+#    #+#             */
-/*   Updated: 2023/11/16 15:20:53 by raphox           ###   ########.fr       */
+/*   Updated: 2023/11/17 18:13:01 by rafaria          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stddef.h>
-char	*ft_strnstr(const char *big, const char *little, size_t len)
-{
-	size_t	i;
-	size_t	j;
 
-	i = 0;
-	j = 0;
-	if (little[j] == '\0')
-		return ((char *)big);
-	while (big[i])
-	{
-		if (big[i] == little[j])
-		{
-			while (big[i + j] == little[j] && j < len)
-				j++;
-			if (j == len)
-				return ((char *)big + i);
-		}
-		j = 0;
-		i++;
-	}
-	return (0);
+#include <stddef.h>
+char    *ft_strnstr(const char *big, const char *little, size_t len)
+{
+    size_t    i;
+	size_t    j;
+
+    i = 0;
+    j = 0;
+    if (little[j] == '\0')
+        return ((char *)big);
+    while (big[i] && i < len)
+    {
+		while (big[i + j] == little[j] && (i + j) < len && little[j])
+			j++;
+		if (!little[j])
+			return ((char *)big + i);
+        j = 0;
+        i++;
+    }
+    return (0);
 }
 
+// #include <bsd/string.h>
 // #include <unistd.h>
+// #include <stdlib.h>
+// #include <stdio.h>
+// #include <string.h>
 
 // int	main(void)
 // {
-// 	char	s1[] = "bonjour comment ca va";
-// 	char	s2[] = "comment";
-// 	char	*res;
+// 	const char	*s1 = "bonjour comment ca va";
+// 	const char	*s2 = "comment";
+// 	size_t res = 4;
 
-// 	res = ft_strnstr(s1, s2, 4);
-// 	printf("%s", res);
+// 	printf("%s\n", ft_strnstr(s1, s2, res));
+// 	printf("%s", strnstr(s1, s2, res));
 // 	printf("\n");
+
+// 		char haystack[30] = "aaabcabcd";
+
+// 	#include <assert.h>
+// 	assert ( ft_strnstr(haystack, "a", __INT_MAX__) == haystack );
+
 // }

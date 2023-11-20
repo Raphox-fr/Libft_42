@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raphox <raphox@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rafaria <rafaria@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 15:03:49 by marvin            #+#    #+#             */
-/*   Updated: 2023/11/16 15:50:40 by raphox           ###   ########.fr       */
+/*   Updated: 2023/11/20 19:01:30 by rafaria          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,29 @@
 
 void	*ft_calloc(size_t n, size_t size)
 {
-	int	all;
-	int	*ptr;
-	int	i;
+	unsigned long int all;
+	char *ptr;
+	int i;
 
 	i = 0;
-	all = n * size;
-	ptr = malloc(sizeof(int) * all);
-	if (size <= 0)
+	all = n * (long)size;
+
+	if (all == 0)
+		return (malloc(0));
+	if ((long)size == -2147483648)
 		return (NULL);
+	if ((long)all < (long)n || all < (unsigned long)size)
+		return (NULL);
+	
+	if (all / size != n)
+	{
+		return (0);
+		
+	}
+	ptr = malloc((long)size * (long)all);
 	if (ptr == NULL)
 		return (NULL);
-	while (i < all)
+	while ((unsigned)i < all)
 	{
 		ptr[i] = 0;
 		i++;
@@ -40,3 +51,4 @@ void	*ft_calloc(size_t n, size_t size)
 // 	size_t size = 4;
 // 	printf("%p", ft_calloc(n, size));
 // }
+// int : min = -2147483648 ; max = 2147483647

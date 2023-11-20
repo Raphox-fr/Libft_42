@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raphox <raphox@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rafaria <rafaria@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 17:57:40 by raphox            #+#    #+#             */
-/*   Updated: 2023/11/16 15:21:58 by raphox           ###   ########.fr       */
+/*   Updated: 2023/11/20 16:48:56 by rafaria          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,42 +14,46 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char	*ft_suka_strlcpy(char *dst, const char *src, size_t dstsize)
+size_t	ft_count(const char *str)
 {
-	size_t	i;
-	char	*blyat;
+	int	i;
 
-	blyat = malloc((sizeof(char)) * (dstsize + 1));
-	if (blyat == NULL)
-		return (NULL);
-	if (!dst || !src)
-		return (0);
 	i = 0;
-	if (dstsize != 0)
+	while (str[i])
 	{
-		while (src[i] != '\0' && i < (dstsize))
-		{
-			blyat[i] = src[i];
-			i++;
-		}
-		blyat[i] = '\0';
+		i++;
 	}
-	return (blyat);
+	return (i);
 }
+
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int		zub;
-	char	*yup;
+	char			*str;
+	unsigned int	i;
 
-	zub = len - start;
-	yup = (char *)s;
-	return (ft_suka_strlcpy(yup, &s[start], zub));
+	i = 0;
+	if (s == NULL)
+		return (NULL);
+	if (len > ft_count(s) - start)
+		len = ft_count(s) - start;
+	if (start >= ft_count(s))
+	{
+		str = (char *)malloc(sizeof(char));
+		if (str != NULL)
+			str[0] = '\0';
+		return (str);
+	}
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (str == NULL)
+		return (NULL);
+	while (i < len)
+		str[i++] = s[start++];
+	str[i] = '\0';
+	return (str);
 }
-
 // int main()
 // {
-// 	char cu[] = "substr function Implementation";
+// 	char cu[45000] = "substr function Implementation";
 // 	printf("%s",ft_substr(cu, 7, 12));
-
 // }

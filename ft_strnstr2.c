@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strnstr2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafaria <rafaria@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 11:00:43 by rafaria           #+#    #+#             */
-/*   Updated: 2023/11/20 17:18:13 by rafaria          ###   ########.fr       */
+/*   Created: 2023/11/17 17:15:57 by rafaria           #+#    #+#             */
+/*   Updated: 2023/11/17 17:19:48 by rafaria          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "libft.h"
-#include <unistd.h>
+#include <bsd/string.h>
+#include <stdio.h>
 
-void	ft_putendl_fd(char *s, int fd)
+
+int	main(void)
 {
-	char suka[] = "\n";
-	int size;
-	size = ft_strlen(s);
-	
-	write(fd, s, size);
-	write(fd, suka, 1);
-	
-}
+	const char	*s1 = "bonjour comment ca va";
+	const char	*s2 = "comment";
+	size_t res = 4;
 
-// int main()
-// {
-// 	char s[] = "bonjou comment ca va";
-// 	ft_putend_fd(s, 1);
-// }
+	printf("%s", strnstr(s1, s2, res));
+	printf("\n");
+}

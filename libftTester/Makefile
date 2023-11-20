@@ -5,8 +5,8 @@ LIBFT_PATH		= $(PARENT_DIR)
 TESTS_PATH		= tests/
 MANDATORY		= memset bzero memcpy memmove memchr memcmp strlen isalpha isdigit isalnum \
 				isascii isprint toupper tolower strchr strrchr strncmp strlcpy strlcat strnstr \
-				atoi strdup substr strjoin itoa strmapi putchar_fd putstr_fd \
-				putendl_fd putnbr_fd striteri calloc strtrim split
+				 strdup substr strjoin strmapi putchar_fd putstr_fd \
+				putendl_fd putnbr_fd striteri calloc strtrim atoi itoa split
 BONUS			= lstnew lstadd_front lstsize lstlast lstadd_back lstdelone lstclear lstiter lstmap
 VSOPEN			= $(addprefix vs, $(MANDATORY)) $(addprefix vs, $(BONUS))
 
