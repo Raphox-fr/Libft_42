@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/rafaria/Documents/real_42",
-      "program": "/home/rafaria/Documents/real_42/build/Debug/outDebug",
+      "cwd": "/home/raphox/Desktop/42/42_Libft_",
+      "program": "/home/raphox/Desktop/42/42_Libft_/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

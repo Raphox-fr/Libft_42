@@ -3,15 +3,15 @@ UTILS			= $(addprefix utils/, sigsegv.cpp color.cpp check.cpp leaks.cpp)
 PARENT_DIR		= $(shell dirname $(shell pwd))
 LIBFT_PATH		= $(PARENT_DIR)
 TESTS_PATH		= tests/
-MANDATORY		= memset bzero memcpy memmove memchr memcmp strlen isalpha isdigit isalnum \
+MANDATORY		= memset atoi bzero itoa memcpy memmove memchr memcmp strlen isalpha isdigit isalnum \
 				isascii isprint toupper tolower strchr strrchr strncmp strlcpy strlcat strnstr \
-				 strdup substr strjoin strmapi putchar_fd putstr_fd \
-				putendl_fd putnbr_fd striteri calloc strtrim atoi itoa split
+				 strdup substr strjoin strmapi putchar_fd putstr_fd putnbr_fd striteri \
+				 putendl_fd calloc strtrim split
 BONUS			= lstnew lstadd_front lstsize lstlast lstadd_back lstdelone lstclear lstiter lstmap
 VSOPEN			= $(addprefix vs, $(MANDATORY)) $(addprefix vs, $(BONUS))
 
 CC		= clang++
-CFLAGS	= -g3 -ldl -gdwarf-4 -std=c++11 -I utils/ -I$(LIBFT_PATH) 
+CFLAGS	= -g3 -ldl -gdwarf-4 -std=c++11 -I utils/ -I$(LIBFT_PATH) -fPIE
 UNAME = $(shell uname -s)
 ifeq ($(UNAME), Linux)
 	VALGRIND = valgrind -q --leak-check=full

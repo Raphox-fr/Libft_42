@@ -6,7 +6,7 @@
 /*   By: raphox <raphox@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 14:32:12 by rafaria           #+#    #+#             */
-/*   Updated: 2023/11/16 14:55:39 by raphox           ###   ########.fr       */
+/*   Updated: 2023/11/21 16:44:36 by raphox           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ int	ft_strlen(char const *str)
 	return (i);
 }
 
-int	ft_checkset(char const *set, char const to_find)
+int	ft_checkset(char const *set, char const to_find,  int size)
 {
 	int	i;
 
 	i = 0;
-	while (set[i])
+	while (set[i] && i < size)
 	{
 		if (set[i] == to_find)
 			return (1);
@@ -43,24 +43,26 @@ int	ft_checkset(char const *set, char const to_find)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		min;
-	int		max;
-	int		fine;
+	unsigned int		min;
+	unsigned int		max;
+	unsigned int		fine;
+	unsigned int		size;
 	char	*main_str;
 
+	size = ft_strlen(s1);
 	min = 0;
 	max = 0;
 	fine = ft_strlen(s1);
-	while (ft_checkset(set, s1[min]) == 1)
+	while (ft_checkset(set, s1[min], size) == 1)
 		min++;
-	while (ft_checkset(set, s1[fine - 1]) == 1)
+	while (ft_checkset(set, s1[fine - 1], size) == 1)
 	{
 		fine--;
 		max++;
 	}
-	main_str = malloc(sizeof(char) * (((ft_strlen(s1) - min) - max)));
+	main_str = malloc(sizeof(char) * (size - min - max + 1));
 	fine = 0;
-	while (min < (ft_strlen(s1) - max))
+	while (min < (size - max))
 	{
 		main_str[fine] = s1[min];
 		fine++;
@@ -72,8 +74,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 // int	main(void)
 // {
-// 	char const set[] = " b";
-// 	char const s1[] = "     b bonjour  b ";
-
-// 	printf("%s", ft_strtrim(s1, set));
+// 	char *s;
+// 	s = ft_strtrim("   xxxtripouille     xxxx", " x");
+// 	printf("%s", s);
 // }
