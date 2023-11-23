@@ -6,33 +6,32 @@
 /*   By: rafaria <rafaria@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 16:56:56 by rafaria           #+#    #+#             */
-/*   Updated: 2023/11/17 18:13:01 by rafaria          ###   ########.fr       */
+/*   Updated: 2023/11/23 18:27:06 by rafaria          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stddef.h>
 
-#include <stddef.h>
-char    *ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-    size_t    i;
-	size_t    j;
+	size_t	i;
+	size_t	j;
 
-    i = 0;
-    j = 0;
-    if (little[j] == '\0')
-        return ((char *)big);
-    while (big[i] && i < len)
-    {
+	i = 0;
+	j = 0;
+	if (little[j] == '\0')
+		return ((char *)big);
+	while (big[i] && i < len)
+	{
 		while (big[i + j] == little[j] && (i + j) < len && little[j])
 			j++;
 		if (!little[j])
 			return ((char *)big + i);
-        j = 0;
-        i++;
-    }
-    return (0);
+		j = 0;
+		i++;
+	}
+	return (0);
 }
 
 // #include <bsd/string.h>

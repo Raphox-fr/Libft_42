@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raphox <raphox@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rafaria <rafaria@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 18:02:52 by rafaria           #+#    #+#             */
-/*   Updated: 2023/11/16 16:35:07 by raphox           ###   ########.fr       */
+/*   Updated: 2023/11/23 18:23:19 by rafaria          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 int	ft_memcmp(const void *dest, const void *src, size_t n)
 {
-	size_t				i;
+	size_t	i;
 	char	*sup1;
 	char	*sup2;
-	int				diff;
+	int		diff;
 
 	i = 0;
 	sup1 = (char *)dest;

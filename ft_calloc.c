@@ -6,7 +6,7 @@
 /*   By: rafaria <rafaria@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 15:03:49 by marvin            #+#    #+#             */
-/*   Updated: 2023/11/20 19:01:30 by rafaria          ###   ########.fr       */
+/*   Updated: 2023/11/23 18:22:54 by rafaria          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,37 +14,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void	*ft_calloc(size_t n, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	unsigned long int all;
-	char *ptr;
-	int i;
+	size_t			i;
+	unsigned char	*tmp;
 
 	i = 0;
-	all = n * (long)size;
-
-	if (all == 0)
+	if (nmemb == 0 || size == 0)
 		return (malloc(0));
-	if ((long)size == -2147483648)
+	if ((nmemb * size) < nmemb || (nmemb * size) < size)
 		return (NULL);
-	if ((long)all < (long)n || all < (unsigned long)size)
+	tmp = malloc(nmemb * size);
+	if (!tmp)
 		return (NULL);
-	
-	if (all / size != n)
-	{
-		return (0);
-		
-	}
-	ptr = malloc((long)size * (long)all);
-	if (ptr == NULL)
-		return (NULL);
-	while ((unsigned)i < all)
-	{
-		ptr[i] = 0;
-		i++;
-	}
-	return ((void *)ptr);
+	while (i < nmemb * size)
+		tmp[i++] = 0;
+	return (tmp);
 }
+
 // int	main(void)
 // {
 // 	size_t n = -4;

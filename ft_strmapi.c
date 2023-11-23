@@ -6,7 +6,7 @@
 /*   By: rafaria <rafaria@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 15:49:29 by rafaria           #+#    #+#             */
-/*   Updated: 2023/11/20 17:04:10 by rafaria          ###   ########.fr       */
+/*   Updated: 2023/11/23 18:24:30 by rafaria          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	int		i;
 	char	*blyat;
-	int taille;
-	
+	int		taille;
+
 	taille = ft_strlen(s) + 1;
 	i = 0;
 	blyat = malloc(sizeof(char) * (taille));
@@ -45,8 +45,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	blyat[i] = '\0';
 	return (blyat);
 }
-
-
 
 // int	main(void)
 // {

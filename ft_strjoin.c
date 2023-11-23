@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raphox <raphox@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rafaria <rafaria@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 18:36:43 by raphox            #+#    #+#             */
-/*   Updated: 2023/11/16 15:24:45 by raphox           ###   ########.fr       */
+/*   Updated: 2023/11/23 18:25:21 by rafaria          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ int	ft_strlen_perso(char *str)
 	return (i);
 }
 
-char	*ft_blyat_strlcpy(char *blyat, char *dst, const char *src, size_t dstsize)
+char	*ft_blyat_strlcpy(char *blyat, char *dst, const char *src,
+		size_t dstsize)
 {
 	size_t	i;
 	int		l;
@@ -68,7 +69,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	suka[0] = '\0';
 	suka = ft_blyat_strlcpy(suka, &dest[0], dest, count1);
 	suka = ft_blyat_strlcpy(suka, &dest[count1], src, count2);
-	return(suka);
+	return (suka);
 }
 
 // int	main(void)

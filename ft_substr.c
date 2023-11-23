@@ -6,7 +6,7 @@
 /*   By: rafaria <rafaria@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 17:57:40 by raphox            #+#    #+#             */
-/*   Updated: 2023/11/20 16:48:56 by rafaria          ###   ########.fr       */
+/*   Updated: 2023/11/23 18:24:46 by rafaria          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ size_t	ft_count(const char *str)
 	}
 	return (i);
 }
-
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

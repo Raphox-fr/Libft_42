@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raphox <raphox@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rafaria <rafaria@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 20:03:07 by raphox            #+#    #+#             */
-/*   Updated: 2023/11/21 17:18:46 by raphox           ###   ########.fr       */
+/*   Updated: 2023/11/23 18:25:00 by rafaria          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 static int	ft_get_size(int n)
 {
-	int size;
+	int	size;
 
 	size = 0;
 	if (n <= 0)
@@ -38,7 +38,7 @@ void	ft_fill_res(int size, int locate, int n, char *res)
 	}
 }
 
-char		*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	int		locate;
 	int		size;
